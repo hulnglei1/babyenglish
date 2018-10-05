@@ -1,0 +1,41 @@
+{
+  "cloud": true,
+  "pages": [
+    "pages/index/index",
+    "pages/talk/talk",
+    "pages/word/word"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "Claire启蒙英语",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/A-1.png",
+        "selectedIconPath": "images/A.png",
+        "text": "字母"
+      },
+      {
+        "pagePath": "pages/word/word",
+        "iconPath": "images/child1.png",
+        "selectedIconPath": "images/child1_1.png",
+        "text": "单词"
+      },
+      {
+        "pagePath": "pages/talk/talk",
+        "iconPath": "images/sing.jpg",
+        "selectedIconPath": "images/sing-1.jpg",
+        "text": "儿歌"
+      }
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+<!--pages/talk/talk.wxml-->
+<view class="container">
+
+  <!-- 用户 openid -->
+
+  <view wx:for="{{array}}" wx:key="id">
+    <text class="tex">{{item.name}}</text>
+    <video src="{{item.qvideo}}" poster="{{item.qposter}}"></video>
+</view>
+
+
+
+</view>

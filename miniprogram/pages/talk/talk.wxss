@@ -1,0 +1,24 @@
+/* pages/talk/talk.wxss */
+
+page {
+  background: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 30px;
+  line-height: 30px;
+}

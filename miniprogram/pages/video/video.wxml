@@ -1,0 +1,10 @@
+<view class="title">{{id}}</view>
+<view class="container">
+
+  <view class="page-body">
+    <view class="page-section tc">
+      <txv-video vid="e0354z3cqjp" playerid="txv1"></txv-video>
+    </view>
+  </view>
+
+</view>

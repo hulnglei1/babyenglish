@@ -1,4 +1,7 @@
 //app.js
+
+var globalNickname = '';
+var globalAvatarUrl = '';
 App({
   onLaunch: function () {
     
@@ -10,6 +13,9 @@ App({
       })
     }
 
-    this.globalData = {}
+    this.globalData = {
+      globalNickname: globalNickname,
+      globalAvatarUrl: globalAvatarUrl
+    }
   }
 })

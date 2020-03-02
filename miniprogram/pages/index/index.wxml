@@ -1,13 +1,16 @@
-<!--index.wxml-->
-<view class="container">
-
-  <!-- 用户 openid -->
-
-  <view wx:for="{{array}}" wx:key="id">
-    <text class="tex">{{item.name}}</text>
-    <video src="{{item.qvideo}}" poster="{{item.qposter}}"></video>
-</view>
-
-
-
+<view class='module-group'>
+    <view class="module-top">
+    <view class="module-title">儿歌</view>
+    <navigator class="module-more" url="/pages/detail/detail">更多</navigator>
+  </view>
+  <scroll-view class="module-scroll-view">
+    <navigator class="item-navigator"  url="/pages/video/video?id=1">
+      <view class="item-group">
+        <view class="thumbnail-group">
+          <image class="thumbnail" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1580922606405&di=25fd21d6404456c19729e2d2286e401c&imgtype=0&src=http%3A%2F%2Fpic.rmb.bdstatic.com%2F1f5e2cf89846e24d99e4988843c01220.png%40s_2%2Cw_272%2Ch_272%2Cq_80"></image>
+        </view>
+      </view>
+    <view class="item-title">儿歌</view>
+    </navigator>
+  </scroll-view>
 </view>

@@ -1,39 +1,75 @@
+var array_import = require("../../pages/data/data.js")
+const app = getApp()
 Page({
 
-    data: {
-      array: [{
-        id: 0,
-        name: 'kinderpower清华幼儿英语',
-        qvideo: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/kinder/kinderCG.mp4',
-        qposter: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/kinder/kinderCG.mp4.jpg',
-      }, {
-        id: 1,
-        name: 'peek-a-boo躲猫猫',
-        qvideo: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/kinder/1a_unit2_peek-a-boo.mp4',
-        qposter: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/kinder/1a_unit2_peek-a-boo.mp4.jpg',
-      }, {
-        id: 3,
-        name: 'little_bee小蜜蜂',
-        qvideo: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/kinder/1a_unit1_little_bee.mp4',
-        qposter: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/kinder/1a_unit1_little_bee.mp4.jpg'
-      }, {
-        id: 4,
-        name: 'Ring_Around_the_Roses玫瑰舞',
-        qvideo: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/kinder/2a_unit2_Ring_Around_the_Roses.mp4',
-        qposter: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/kinder/2a_unit2_Ring_Around_the_Roses.mp4.jpg'
-      }, {
-        id: 5,
-        name: 'Plants植物',
-        qvideo: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/kinder/3a_unit3_Plants.mp4',
-        qposter: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/kinder/3a_unit3_Plants.mp4.jpg'
-      }, {
-        id: 6,
-        name: 'Baby_Bumblebee蜜蜂宝贝',
-        qvideo: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/kinder/4a_unit2_Baby_Bumblebee.mp4',
-        qposter: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/kinder/4a_unit2_Baby_Bumblebee.mp4.jpg'
-      }]
+  data: {
+    array: [],
+
+    avatarUrl: '../../images/user-unlogin.png',
+    userInfo: {},
+    logged: false,
+    takeSession: false,
+    requestResult: '',
+    nickname: "<--字母页面头像获取称号",
+
+
+  },
+
+  onLoad: function () {
+    this.setData({
+      array: array_import.songs_array
+    })
+  },
+
+
+
+  onShow: function () {
+    this.setData({
+      nickname: app.globalData.globalNickname,
+      avatarUrl: app.globalData.globalAvatarUrl,
+    })
+  },
+
+  videoErrorCallback: function(e) {
+    console.log('视频错误信息:')
+    console.log(e.detail.errMsg)
+  },
+
+  vieoStart: function(res) {
+    var id = res.currentTarget.id;
+    this.videoContext = wx.createVideoContext(id)
+    this.videoContext.requestFullScreen()
+  },
+
+  videoEnd: function(res) {  // 视频播放结束后执行的方法
+    var id = res.currentTarget.id;
+    this.videoContext = wx.createVideoContext(id)
+    this.videoContext.exitFullScreen()
+    if (id == this.data.array.length - 1) {
+      wx.showToast({
+        title: '已播放完成',
+        icon: 'loading',
+        duration: 2500,
+        mask: true,
+      })
+    } else {
+      wx.showToast({
+        title: '播放下一个',
+        icon: 'loading',
+        duration: 2500,
+        mask: true,
+      })
+      setTimeout(function() {
+        var idNext = String(Number(id) + 1);
+        this.videoContext = wx.createVideoContext(idNext)
+        this.videoContext.play()
+        this.videoContext.requestFullScreen()
+      }, 2500)
     }
-
+  },
+  onShareAppMessage: function (res) {
+    return {
+      title: '我家宝宝特喜欢这些视频，你们试试看？',
+    }
   }
-
-)
+})

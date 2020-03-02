@@ -1,13 +1,9 @@
 <!--pages/talk/talk.wxml-->
+<import src="../video-template/video-template.wxml" />
 <view class="container">
 
   <!-- 用户 openid -->
-
-  <view wx:for="{{array}}" wx:key="id">
-    <text class="tex">{{item.name}}</text>
-    <video src="{{item.qvideo}}" poster="{{item.qposter}}"></video>
-</view>
-
-
-
+  <block wx:for="{{array}}" wx:key="id">
+    <template is="video-template" data="{{...item}}" />
+  </block>
 </view>

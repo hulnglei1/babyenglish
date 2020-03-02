@@ -9,8 +9,11 @@
 		"newFeature": true
 	},
 	"appid": "wx98673fc78f49876f",
-	"projectname": "test",
-	"libVersion": "2.2.5",
+	"projectname": "babyEnglish0202",
+	"libVersion": "2.3.0",
+	"compileType": "miniprogram",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
@@ -28,12 +31,19 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 1,
 			"list": [
 				{
 					"id": -1,
 					"name": "db guide",
-					"pathName": "pages/databaseGuide/databaseGuide"
+					"pathName": "pages/databaseGuide/databaseGuide",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "test",
+					"pathName": "pages/news/news",
+					"scene": "1089"
 				}
 			]
 		}

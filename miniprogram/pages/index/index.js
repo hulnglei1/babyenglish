@@ -1,143 +1,84 @@
-
 Page({
-  data: {
+  onShow() {
+    wx.reportAnalytics('enter_home_programmatically', {})
+  },
+  onShareAppMessage() {
+    return {
+      title: '小程序官方组件展示',
+      path: 'page/component/index'
+    }
+  },
 
-    array: [{
-      id: 1,
-      name: 'A',
-      qvideo: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母A.mp4',
-      qposter: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母A.mp4.jpg'
-    }, {
-      id: 2,
-      name: 'B',
-      qvideo: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母B.mp4',
-      qposter: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母B.mp4.jpg'
-    }, {
-      id: 3,
-      name: 'C',
-      qvideo: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母C.mp4',
-      qposter: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母C.mp4.jpg'
-    }, {
-      id: 4,
-      name: 'D',
-      qvideo: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母D.mp4',
-      qposter: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母D.mp4.jpg'
-    }, {
-      id: 5,
-      name: 'E',
-      qvideo: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母E.mp4',
-      qposter: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母E.mp4.jpg'
-    }, {
-      id: 6,
-      name: 'F',
-      qvideo: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母F.mp4',
-      qposter: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母F.mp4.jpg'
-    }, {
-      id: 7,
-      name: 'G',
-      qvideo: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母G.mp4',
-      qposter: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母G.mp4.jpg'
-    }, {
-      id: 8,
-      name: 'H',
-      qvideo: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母H.mp4',
-      qposter: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母H.mp4.jpg'
-    }, {
-      id: 9,
-      name: 'I',
-      qvideo: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母I.mp4',
-      qposter: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母I.mp4.jpg'
-    }, {
-      id: 10,
-      name: 'J',
-      qvideo: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母J.mp4',
-      qposter: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母J.mp4.jpg'
-    }, {
-      id: 11,
-      name: 'K',
-      qvideo: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母K.mp4',
-      qposter: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母K.mp4.jpg'
-    }, {
-      id: 12,
-      name: 'L',
-      qvideo: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母L.mp4',
-      qposter: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母L.mp4.jpg'
-    }, {
-      id: 13,
-      name: 'M',
-      qvideo: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母M.mp4',
-      qposter: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母M.mp4.jpg'
-    }, {
-      id: 14,
-      name: 'N',
-      qvideo: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母N.mp4',
-      qposter: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母N.mp4.jpg'
-    }, {
-      id: 15,
-      name: 'O',
-      qvideo: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母O.mp4',
-      qposter: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母O.mp4.jpg'
-    }, {
-      id: 16,
-      name: 'P',
-      qvideo: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母P.mp4',
-      qposter: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母P.mp4.jpg'
-    }, {
-      id: 17,
-      name: 'Q',
-      qvideo: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母Q.mp4',
-      qposter: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母Q.mp4.jpg'
-    }, {
-      id: 18,
-      name: 'R',
-      qvideo: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母R.mp4',
-      qposter: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母R.mp4.jpg'
-    }, {
-      id: 19,
-      name: 'S',
-      qvideo: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母S.mp4',
-      qposter: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母S.mp4.jpg'
-    }, {
-      id: 20,
-      name: 'T',
-      qvideo: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母T.mp4',
-      qposter: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母T.mp4.jpg'
-    }, {
-      id: 21,
-      name: 'U',
-      qvideo: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母U.mp4',
-      qposter: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母U.mp4.jpg'
-    }, {
-      id: 22,
-      name: 'V',
-      qvideo: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母V.mp4',
-      qposter: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母V.mp4.jpg'
-    }, {
-      id: 23,
-      name: 'W',
-      qvideo: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母W.mp4',
-      qposter: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母W.mp4.jpg'
-    }, {
-      id: 24,
-      name: 'X',
-      qvideo: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母X.mp4',
-      qposter: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母X.mp4.jpg'
-    }, {
-      id: 25,
-      name: 'Y',
-      qvideo: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母Y.mp4',
-      qposter: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母Y.mp4.jpg'
-    }, {
-      id: 26,
-      name: 'Z',
-      qvideo: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母Z.mp4',
-      qposter: 'cloud://babyenglsih-240495.6261-babyenglsih-240495/字母/字母Z.mp4.jpg'
-    }]
+  data: {
+    list: [
+      {
+        id: 'view',
+        name: '字母',
+        open: false,
+        pages: ['字母', '元音', 'swiper', 'movable-view', 'cover-view']
+      }, {
+        id: 'content',
+        name: '儿歌',
+        open: false,
+        pages: ['text', 'icon', 'progress', 'rich-text']
+      }, {
+        id: 'form',
+        name: '资讯',
+        open: false,
+        pages: ['button', 'checkbox', 'form', 'input', 'label', 'picker', 'picker-view', 'radio', 'slider', 'switch', 'textarea', 'editor']
+      }, {
+        id: 'nav',
+        name: '导航',
+        open: false,
+        pages: ['navigator']
+      }, {
+        id: 'media',
+        name: '媒体组件',
+        open: false,
+        pages: ['image', 'audio', 'video', 'camera']
+      }, {
+        id: 'map',
+        name: '地图',
+        open: false,
+        pages: ['map']
+      }, {
+        id: 'canvas',
+        name: '画布',
+        open: false,
+        pages: ['canvas']
+      }, {
+        id: 'open',
+        name: '开放能力',
+        open: false,
+        pages: ['ad', 'open-data', 'web-view']
+      }
+    ]
+  },
+
+  onLoad(options){
+
+    const db = wx.cloud.database()
+    db.collection('letters_array').get({
+      success: function (res) {
+        console.log(res.data)
+      }
+    })
 
   },
 
-  videoErrorCallback: function(e) {
-    console.log('视频错误信息:')
-    console.log(e.detail.errMsg)
+  kindToggle(e) {
+    const id = e.currentTarget.id
+    const list = this.data.list
+    for (let i = 0, len = list.length; i < len; ++i) {
+      if (list[i].id === id) {
+        list[i].open = !list[i].open
+      } else {
+        list[i].open = false
+      }
+    }
+    this.setData({
+      list
+    })
+    wx.reportAnalytics('click_view_programmatically', {})
   }
 })

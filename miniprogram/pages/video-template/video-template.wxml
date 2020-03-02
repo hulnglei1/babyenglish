@@ -1,0 +1,12 @@
+<template name="video-template">
+  <view class="videolist">
+    <video class="qvideo" id='{{id}}' src="{{qvideo}}" poster="{{qposter}}" binderror="videoErrorCallback" autoplay='{{isPlay}}' bindended='videoEnd' bindplay='vieoStart' bindfullscreenchange='screenChange'></video>
+    <view class='titleBox'>
+      <text class="title">{{name}}</text>
+      <button class="sharebutton" open-type='share'>
+        分享给好友
+        <image class="button-image" src='../../images/wechat.png' mode='widthFix'></image>
+      </button>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,89 @@
+page {
+  background: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-width: 100%;
+}
+
+
+.videolist {
+  margin-top: 10rpx;
+  background-color: #fff;
+  border-top: 1px solid #ededed;
+  border-bottom: 1px solid #ededed;
+}
+
+.qvideo {
+  margin: auto 0;
+  min-width: 100%;
+  align-items: center;
+  width: 750rpx;
+}
+
+
+.titleBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 80rpx;
+}
+
+.title {
+  margin-left: 20rpx;
+  font-size: 34rpx;
+  font-weight: 700;
+  align-items: center;
+  color: #333;
+}
+
+.sharebutton {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-right: 20rpx;
+  background: #50b674;
+  border-radius: 60rpx;
+  font-size: 25rpx;
+}
+
+.button-image{
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.userinfo{
+  height: 110rpx;
+  width: 98%;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-left: none;
+  border-right: none;
+  border-radius: 110rpx;
+  border-style: dashed;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition: all 300ms ease;
+  justify-content: space-around;
+}
+
+.userinfo-avatar {
+  width: 100rpx;
+  height: 100rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  background-size: cover;
+  background-color: white;
+}
+
+.userinfo-nickname {
+  font-size: 50rpx;
+  color: #50b674;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+
+.userinfo-nickname::after {
+  border: none;
+}
+
+
